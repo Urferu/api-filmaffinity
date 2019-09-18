@@ -9,7 +9,7 @@ router.get('/:busqueda', function(req, res, next) {
     request({
         method: 'GET',
         json: true,
-        uri: "https://www.googleapis.com/customsearch/v1?q="+req.params.busqueda+" +inurl:filmaffinity.com/es&key=AIzaSyAz2ZC8trzVOBCPGaeC8ReTmIYb5vt1yWs&cx=002019692856142923148:nijox13azs4",
+        uri: "https://www.googleapis.com/customsearch/v1?q="+req.params.busqueda+"+inurl:filmaffinity.com/es&key=AIzaSyAz2ZC8trzVOBCPGaeC8ReTmIYb5vt1yWs&cx=002019692856142923148:nijox13azs4",
     }, function(error, response, body) {
 
         if (error){
@@ -25,7 +25,7 @@ router.get('/:busqueda', function(req, res, next) {
                 if (item.link.indexOf('www.filmaffinity.com/es/film')!== -1){
                     const pelicula = {
                         titulo : item.title.replace(' - FilmAffinity',''),
-                        id: item.link.replace('http://www.filmaffinity.com/es/film','').replace('.html',''),
+                        id: item.link.replace('https://www.filmaffinity.com/es/film','').replace('.html',''),
                         poster: item.pagemap.movie.image
                     };
                     itemsValidos.push(pelicula);

@@ -9,7 +9,7 @@ router.get('/:id', function(req, res, next) {
     request({
         method: 'GET',
         json: true,
-        uri: req.params.id +".html",
+        uri: "https://www.filmaffinity.com/es/film" + req.params.id + ".html",
     }, function(error, response, body) {
         if (error){
             res.json({error});
