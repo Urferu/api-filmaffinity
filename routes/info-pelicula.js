@@ -9,7 +9,7 @@ router.get('/:id', function(req, res, next) {
     request({
         method: 'GET',
         json: true,
-        uri: "https://www.filmaffinity.com/es/film"+ req.params.id +".html",
+        uri: req.params.id +".html",
     }, function(error, response, body) {
         if (error){
             res.json({error});
@@ -23,6 +23,7 @@ router.get('/:id', function(req, res, next) {
             });
             const directores = $('span.director').text().trim();
             const actores = $('span.cast').text().trim();
+            const imagen = $('a.lightbox').src().trim();
 
             var title = body.substring(body.indexOf("<title>")+7, body.indexOf("</title>")-15);
             var anio = title.substring(title.length-6, title.length);
@@ -44,7 +45,8 @@ router.get('/:id', function(req, res, next) {
                 anio : anio,
                 direccion: directores,
                 reparto: actores,
-                sinopsis: descrip
+                sinopsis: descrip,
+                portada: imagen
             };
 
             res.json(respuesta);
