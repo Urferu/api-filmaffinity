@@ -16,40 +16,35 @@ Se trata de una API no oficial, por lo que blablabla...
 
 ### Ejemplos de uso
 * Búsqueda de id de películas que coincidan con los términos de búsqueda introducidos:
-    * GET https://api-filmaffinity.herokuapp.com/api/busqueda/lo+que+el+viento+se+llevo
+    * GET https://pelisdatosapi.herokuapp.com/api/busqueda/lo+que+el+viento+se+llevo
 ```json
     [
         {
-            titulo: "Lo que el viento se llevó (1939)",
-            id: "470268"
-        },
-        {
-            titulo: "El viento se levanta (2013)",
-            id: "835261"
-        },
-        {
-            titulo: "El viento que agita la cebada (2006)",
-            id: "972991"
+            titulo: "Lo que el viento se llevó (1939) - Filmaffinity",
+            id: "470268",
+            poster: "https://pics.filmaffinity.com/Lo_que_el_viento_se_llev-432251527-large.jpg"
         }
     ]
 ```
 
-   * GET https://api-filmaffinity.herokuapp.com/api/busqueda/la+amenaza+fantasma
+   * GET https://pelisdatosapi.herokuapp.com/api/busqueda/la+amenaza+fantasma
 ```json
     [
         {
-            titulo: "La guerra de las galaxias. Episodio I: La amenaza fantasma (1999)",
-            id: "267008"
+            titulo: "La guerra de las galaxias. Episodio I: La amenaza fantasma (1999 ...",
+            id: "267008",
+            poster: "https://pics.filmaffinity.com/La_guerra_de_las_galaxias_Episodio_I_La_amenaza_fantasma-434398792-large.jpg"
         },
         {
-            titulo: "Stealth: La amenaza invisible (2005)",
-            id: "553558"
+            titulo: "Stealth: La amenaza invisible (2005) - Filmaffinity",
+            id: "553558",
+            poster: "https://pics.filmaffinity.com/Stealth_La_amenaza_invisible-730759310-large.jpg"
         }
     ]
 ```
 
 * Búsqueda de una película a través de su id :
-    * GET https://api-filmaffinity.herokuapp.com/api/pelicula/470268
+    * GET https://pelisdatosapi.herokuapp.com/api/pelicula/470268
 ```json
     {
         titulo: "Lo que el viento se llevó",
@@ -69,7 +64,7 @@ Se trata de una API no oficial, por lo que blablabla...
     }
 ```
 
-   * GET https://api-filmaffinity.herokuapp.com/api/pelicula/267008
+   * GET https://pelisdatosapi.herokuapp.com/api/pelicula/267008
 ```json
     {
         titulo: "La guerra delas galaxias. Episodio I: La amenaza fantasma",
