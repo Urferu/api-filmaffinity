@@ -23,7 +23,6 @@ router.get('/:id', function(req, res, next) {
             });
             const directores = $('span.director').text().trim();
             const actores = $('span.cast').text().trim();
-            const imagen = $('a.lightbox').src().trim();
 
             var title = body.substring(body.indexOf("<title>")+7, body.indexOf("</title>")-15);
             var anio = title.substring(title.length-6, title.length);
@@ -45,8 +44,7 @@ router.get('/:id', function(req, res, next) {
                 anio : anio,
                 direccion: directores,
                 reparto: actores,
-                sinopsis: descrip,
-                portada: imagen
+                sinopsis: descrip
             };
 
             res.json(respuesta);

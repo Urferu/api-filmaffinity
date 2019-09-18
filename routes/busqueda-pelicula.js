@@ -26,7 +26,7 @@ router.get('/:busqueda', function(req, res, next) {
                     const pelicula = {
                         titulo : item.title.replace(' - FilmAffinity',''),
                         id: item.link.replace('https://www.filmaffinity.com/es/film','').replace('.html',''),
-                        poster: item.pagemap.movie.image
+                        poster: item.pagemap.movie[0].image
                     };
                     itemsValidos.push(pelicula);
                 }
